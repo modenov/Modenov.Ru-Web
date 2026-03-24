@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Генератор коммерческих предложений">
+<meta name="author" content="Владимир Моденов">
+<title>KP Generator Pro v2</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+<h1>Генератор КП</h1>
+
+<div class="card">
+<label>Заголовок</label>
+<textarea id="title"># Коммерческое предложение на поставку штемпельной продукции</textarea>
+
+<label>Город и дата</label>
+<input type="text" id="citydate">
+
+<label>Реквизиты</label>
+<textarea id="details">- Поставщик: ИП Моденов Владимир Романович
+- Адрес поставщика: г. Смоленск, пр-кт Гагарина, дом 22, оф. 447
+- Телефон для связи: +7 (904) 364-66-21, почта: hello@smolp.ru</textarea>
+
+<label>Основной текст</label>
+<textarea id="text">Настоящим документом предлагаем рассмотреть возможность поставки следующей продукции (суммы указаны без НДС, работаем на упрощённой системе налогообложения):</textarea>
+</div>
+
+<div class="card">
+<h2>Товары</h2>
+<button onclick="addRow()">+ Добавить</button>
+<table id="table">
+<thead>
+<tr>
+<th>№</th>
+<th>Наименование</th>
+<th>Цена</th>
+<th>Кол-во</th>
+<th>Сумма</th>
+<th></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+
+<div class="card">
+<label>Подпись</label>
+<textarea id="sign">Моденов В.Р.
+______________________________</textarea>
+</div>
+
+<div class="card">
+<button onclick="generate()">Сгенерировать Markdown</button>
+<button onclick="copyText()">Копировать</button>
+<button onclick="clearAll()">Очистить</button>
+
+<textarea id="output"></textarea>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
